@@ -37,3 +37,4 @@ figure;
 plot(0:0.001:0.2, [ray1(1, :)', ray2(1, :)', ray3(1, :)', ray4(1, :)', ray5(1, :)', ray6(1, :)', ray7(1, :)', ray8(1, :)', ray9(1, :)', rayA(1, :)']);
 xlabel("z(m)");
 ylabel("x(m)");
+title("Rays propogating for 0.2m");
