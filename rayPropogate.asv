@@ -1,0 +1,5 @@
+%% File to simulate rays propogating in xz plane
+
+
+for i = 0: i<
+Md = [1, d; 0, 1];
