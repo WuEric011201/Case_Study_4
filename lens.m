@@ -25,7 +25,14 @@ ray8 = [10*10^-3; 0; 0; 0];
 ray9 = [10*10^-3; -pi/40; 0; 0];
 rayA = [10*10^-3; -pi/20; 0; 0];
 
-allRays = [ray1, ray2, ray3, ray4, ray5, ray6, ray7, ray8, ray9, rayA];
+% Rays for 20mm
+rayB = [20*10^-3; pi/20; 0; 0];
+rayC = [20*10^-3; pi/40; 0; 0];
+rayD = [20*10^-3; 0; 0; 0];
+rayE = [20*10^-3; -pi/40; 0; 0];
+rayF = [20*10^-3; -pi/20; 0; 0];
+
+allRays = [ray1, ray2, ray3, ray4, ray5, ray6, ray7, ray8, ray9, rayA, rayB, rayC, rayD, rayE, rayF];
 
 raysOpen = M1*allRays;
 
@@ -34,3 +41,17 @@ raysLense = M2*raysOpen;
 raysConverge = M3*raysLense;
 
 plot([0, d1, d1+d3], [allRays(1, :)', raysOpen(1, :)', raysConverge(1, :)']);
+
+%% Part 2 Question 1b
+% The group of rays, at x = 20mm, still converges to same z spot after
+% travelling through the lense. This is expected, as based on the equation
+% 1/d1 + 1/d2 = 1/f still holds true. d1 is the same as the other rays,
+% and f is still the same, so the resulting d2 where the rays converge will
+% still be the same.
+
+% When f becomes larger, the seperation between image points increases. 
+
+%% Question 2
+
+M = [-d3/d1, 0, 0, 0; -1/f, -d1/d3, 0, 0; 0, 0, -d3/d1, 0; 0, 0, -1/f, -d1/d3];
+
