@@ -14,8 +14,8 @@ function [img,x,y] = rays2img(rays_x,rays_y,width,Npixels)
 %   the square image sensor.
 %
 % outputs:
-% img: A width x width x 3 matrix representing an image captured by an 
-%   image sensor with a total Npixels^2 pixels.
+% img is an Npixels x Npixels matrix representing a grayscale image captured by 
+% an image sensor with a total Npixels^2 pixels.
 % x: A 1 x 2 vector that specifies the x positions of the left and right 
 %   edges of the imaging sensor in meters.
 % y: A 1 x 2 vector that specifies the y positions of the bottom and top 
