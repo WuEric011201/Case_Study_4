@@ -16,3 +16,21 @@ imshow(img);
 % image can be produced by increasing sensor width.
 
 % Increasing pixels makes the image bigger but does not make it sharper.
+
+%% Propogating the rays
+d = 0.02;
+
+Md = [1, d, 0, 0;
+    0, 1, 0, 0;
+    0, 0, 1, d;
+    0, 0, 0, 1];
+
+raysProp = Md*rays;
+
+[imgProp, x, y] = rays2img(raysProp(1, :), raysProp(3, :), 5*10^-3, 200);
+figure;
+imshow(imgProp);
+
+% Propogating the rays has no impact on clarity. 
+
+%% TODO Answer question 3
