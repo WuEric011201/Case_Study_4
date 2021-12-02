@@ -35,9 +35,10 @@ imshow(imgProp);
 % Propogating the rays has no impact on clarity. 
 
 %% question 3
-% Since the light travelled in a straight line, the image that is captured
-% from a specific distance from the object emitting light will not be the
-% same as the object itself. Instead, it will be blurred since different
-% light rays from different spots on the object will interfere and overlap
-% with each other, since the object is emitting light with diffferent
-% angles from the input plane. 
+% The image that is captured from a specific distance from the object, 
+% emitted light will not be the same as the object itself. Our propogation 
+% matrix, Md, only simulates increasing the distance from the object.
+% The light rays will never reconverge and instead, it will be more blurred
+% since different light rays from different spots on the object will 
+% interfere and overlap with each other as the object is emitting light 
+% with diffferent angles from the input plane. 

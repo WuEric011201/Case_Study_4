@@ -3,7 +3,7 @@
 d1 = 0.2;
 M1 = [1, d1, 0, 0; 0, 1, 0, 0; 0, 0, 1, d1; 0, 0, 0, 1];
 
-f = 0.1;
+f = 0.03;
 M2 = [1, 0, 0, 0; -1/f, 1, 0, 0; 0, 0, 1, 0; 0, 0, -1/f, 1];
 
 d3 = 0.3;
@@ -41,22 +41,3 @@ raysLense = M2*raysOpen;
 raysConverge = M3*raysLense;
 
 plot([0, d1, d1+d3], [allRays(1, :)', raysOpen(1, :)', raysConverge(1, :)']);
-
-%% Part 2 Question 1b
-% The group of rays, at x = 20mm, still converges to same z spot after
-% travelling through the lense. This is expected, as based on the equation
-% 1/d1 + 1/d2 = 1/f still holds true. d1 is the same as the other rays,
-% and f is still the same, so the resulting d2 where the rays converge will
-% still be the same.
-
-% When f becomes larger, the seperation between image points increases. 
-
-%% Question 2
-
-% M = [-d2/d1, 0, 0, 0; -1/f, -d1/d2, 0, 0; 0, 0, -d2/d1, 0; 0, 0, -1/f, -d1/d2];
-
-%% TODO Answer question 2: 2b 2c
-
-% 2b: The higher the input ray is (larger X value), the lower the output
-% ray is (x value).
-
