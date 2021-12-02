@@ -1,4 +1,4 @@
-close all
+close all; 
 clc
 %% File to load lightfield image
 
@@ -19,20 +19,25 @@ imshow(img);
 % Increasing pixels makes the image bigger but does not make it sharper.
 
 %% Propogating the rays
+% Initialize the values
 d = 0.02;
 
 Md = [1, d, 0, 0;
     0, 1, 0, 0;
     0, 0, 1, d;
     0, 0, 0, 1];
-
+% Compute the final position
 raysProp = Md*rays;
             
 [imgProp, x, y] = rays2img(raysProp(1, :), raysProp(3, :), 5*10^-3, 200);
 figure;
+title("The image after propogating for a distance of 0.02 m");
 imshow(imgProp);
 
-% Propogating the rays has no impact on clarity. 
+
+% Propogating the rays with a larger distance will make the image look
+% less sharp but decreasing the distnace will not not make the image look
+% less sharp. 
 
 %% question 3
 % Since the light travelled in a straight line, the image that is captured
