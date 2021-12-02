@@ -51,5 +51,10 @@ plot([0, d1, d1+d3], [allRays(1, :)', raysOpen(1, :)', raysConverge(1, :)']);
 
 %% Question 2
 
-M = [-d3/d1, 0, 0, 0; -1/f, -d1/d3, 0, 0; 0, 0, -d3/d1, 0; 0, 0, -1/f, -d1/d3];
+% M = [-d2/d1, 0, 0, 0; -1/f, -d1/d2, 0, 0; 0, 0, -d2/d1, 0; 0, 0, -1/f, -d1/d2];
+
+%% TODO Answer question 2: 2b 2c
+
+% 2b: The higher the input ray is (larger X value), the lower the output
+% ray is (x value).
 
