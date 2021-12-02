@@ -1,5 +1,5 @@
 %% File to simulate rays hitting lense
-
+% set up all the parameters
 d1 = 0.2;
 M1 = [1, d1, 0, 0; 0, 1, 0, 0; 0, 0, 1, d1; 0, 0, 0, 1];
 
@@ -31,13 +31,11 @@ rayC = [20*10^-3; pi/40; 0; 0];
 rayD = [20*10^-3; 0; 0; 0];
 rayE = [20*10^-3; -pi/40; 0; 0];
 rayF = [20*10^-3; -pi/20; 0; 0];
-
+% Fill in the container for the initial position
 allRays = [ray1, ray2, ray3, ray4, ray5, ray6, ray7, ray8, ray9, rayA, rayB, rayC, rayD, rayE, rayF];
-
+% Compute the rays
 raysOpen = M1*allRays;
-
 raysLense = M2*raysOpen;
-
 raysConverge = M3*raysLense;
 
 plot([0, d1, d1+d3], [allRays(1, :)', raysOpen(1, :)', raysConverge(1, :)']);
