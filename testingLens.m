@@ -40,4 +40,8 @@ raysLense = M2*raysOpen;
 
 raysConverge = M3*raysLense;
 
+% Plot the rays traveling path graph
 plot([0, d1, d1+d3], [allRays(1, :)', raysOpen(1, :)', raysConverge(1, :)']);
+xlabel("Distance from the rays emitting origin, x (m)");
+ylabel("Height, z (m)");
+title("Rays traveling through free space and a converge lens");
