@@ -38,7 +38,11 @@ raysOpen = M1*allRays;
 raysLense = M2*raysOpen;
 raysConverge = M3*raysLense;
 
+figure;
 plot([0, d1, d1+d3], [allRays(1, :)', raysOpen(1, :)', raysConverge(1, :)']);
+xlabel("z(m)");
+ylabel("x(m)");
+title("Rays propogating and hitting a lens");
 
 %% Part 2 Question 1b
 % The group of rays, at x = 20mm, still converges to same z spot after

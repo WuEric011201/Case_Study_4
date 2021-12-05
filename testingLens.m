@@ -1,43 +1,31 @@
-%% File to simulate rays hitting lense
+close all;
 
-d1 = 0.2;
-M1 = [1, d1, 0, 0; 0, 1, 0, 0; 0, 0, 1, d1; 0, 0, 0, 1];
+%% File to simulate a camera lens and sharpen our lightfield image
+load("lightField.mat");
 
-f = 0.03;
+% 1/d1+1/d2=1/f -> lim d1-> inf, f=d2
+d=1;
+
+d1 = 0.2+d;
+
+%d2 can be from .13 -> .25 ish
+d2 = 0.2;
+
+M1 = [1, d, 0, 0; 0, 1, 0, 0; 0, 0, 1, d; 0, 0, 0, 1];
+M3 = [1, d2, 0, 0; 0, 1, 0, 0; 0, 0, 1, d2; 0, 0, 0, 1];
+
+f = 1/(1/d1+1/d2);
 M2 = [1, 0, 0, 0; -1/f, 1, 0, 0; 0, 0, 1, 0; 0, 0, -1/f, 1];
 
-d3 = 0.3;
-M3 = [1, d3, 0, 0; 0, 1, 0, 0; 0, 0, 1, d3; 0, 0, 0, 1];
+%M = [-d2/d1, 0, 0, 0; -(1/d1+1/d2), -d1/d2, 0, 0; 0, 0, -d2/d1, 0; 0, 0, -(1/d1+1/d2), -d1/d2];
 
-M = M3*M2*M1;
+raysNew = M3*M2*M1*rays;
 
-% Setup rays for all position 0 ones
-ray1 = [0; pi/20; 0; 0];
-ray2 = [0; pi/40; 0; 0];
-ray3 = [0; 0; 0; 0];
-ray4 = [0; -pi/40; 0; 0];
-ray5 = [0; -pi/20; 0; 0];
+[img, x, y] = rays2img(rays(1, :), rays(3, :), 5*10^-3, 200);
+[imgNew, xNew, yNew] = rays2img(raysNew(1, :), raysNew(3, :), 5*10^-3, 200);
 
-% Rays for 10mm
-ray6 = [10*10^-3; pi/20; 0; 0];
-ray7 = [10*10^-3; pi/40; 0; 0];
-ray8 = [10*10^-3; 0; 0; 0];
-ray9 = [10*10^-3; -pi/40; 0; 0];
-rayA = [10*10^-3; -pi/20; 0; 0];
+figure;
+imshow(img);
 
-% Rays for 20mm
-rayB = [20*10^-3; pi/20; 0; 0];
-rayC = [20*10^-3; pi/40; 0; 0];
-rayD = [20*10^-3; 0; 0; 0];
-rayE = [20*10^-3; -pi/40; 0; 0];
-rayF = [20*10^-3; -pi/20; 0; 0];
-
-allRays = [ray1, ray2, ray3, ray4, ray5, ray6, ray7, ray8, ray9, rayA, rayB, rayC, rayD, rayE, rayF];
-
-raysOpen = M1*allRays;
-
-raysLense = M2*raysOpen;
-
-raysConverge = M3*raysLense;
-
-plot([0, d1, d1+d3], [allRays(1, :)', raysOpen(1, :)', raysConverge(1, :)']);
+figure;
+imshow(imgNew);
