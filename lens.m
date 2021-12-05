@@ -39,19 +39,11 @@ raysOpen = M1*allRays;
 raysLense = M2*raysOpen;
 raysConverge = M3*raysLense;
 
-<<<<<<< HEAD
 figure;
 plot([0, d1, d1+d3], [allRays(1, :)', raysOpen(1, :)', raysConverge(1, :)']);
 xlabel("z(m)");
 ylabel("x(m)");
 title("Rays propogating and hitting a lens");
-=======
-% Plot the light traveling path graph
-plot([0, d1, d1+d3], [allRays(1, :)', raysOpen(1, :)', raysConverge(1, :)']);
-xlabel("Distance from the light emitting origin, x (m)");
-ylabel("Height, z (m)");
-title("Rays traveling through free space and a converge lens");
->>>>>>> 04098cdd477d684564b36182b66d58602f0ebf9b
 
 %% Part 2 Question 1b
 % The group of rays, at x = 20mm, still converges to same z spot after

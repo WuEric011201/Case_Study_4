@@ -27,13 +27,5 @@ raysNew = M3*M2*M1*rays;
 figure;
 imshow(img);
 
-<<<<<<< HEAD
 figure;
 imshow(imgNew);
-=======
-% Plot the rays traveling path graph
-plot([0, d1, d1+d3], [allRays(1, :)', raysOpen(1, :)', raysConverge(1, :)']);
-xlabel("Distance from the rays emitting origin, x (m)");
-ylabel("Height, z (m)");
-title("Rays traveling through free space and a converge lens");
->>>>>>> 04098cdd477d684564b36182b66d58602f0ebf9b
