@@ -13,8 +13,7 @@ imshow(img);
 % a bright object can be seen in the middle of the image.
 
 % With a 10mm sensor, the image becomes more focused on a bright spot in
-% the center, but the image is still a little blurry. However, a sharper
-% image can be produced by increasing sensor width.
+% the center, but the image is still a blurry.
 
 % Increasing pixels makes the image bigger but does not make it sharper.
 

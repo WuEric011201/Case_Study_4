@@ -3,11 +3,9 @@ close all;
 %% File to simulate a camera lens and sharpen our lightfield image
 load("lightField.mat");
 
-% 1/d1+1/d2=1/f -> lim d1-> inf, f=d2
 % Initialize the variables
-d1 = 0.2;
+d1 = 0.2; % through experimentation we found that d1 is approximately 0.2m
 
-%d2 can be from .13 -> .25 ish
 d2 = 0.2;
 
 M1 = [1, d1, 0, 0; 0, 1, 0, 0; 0, 0, 1, d1; 0, 0, 0, 1];
